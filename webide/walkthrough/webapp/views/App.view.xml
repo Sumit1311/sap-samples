@@ -1,0 +1,16 @@
+<mvc:View
+xmlns="sap.m"
+controllerName="sap.ui.demo.walkthrough.controllers.App"
+xmlns:mvc="sap.ui.core.mvc"
+>
+   <Button
+		text="{i18n>showHelloButtonText}"
+    	press=".onShowHello"/>
+    <Input 
+    	type="Text" 
+    	valueLiveUpdate="true" 
+    	width="60%"
+    	description="{/descriptionMessage}" 
+    	liveChange=".onLiveChange"
+    	value="{/receipient/name}" />
+</mvc:View>
