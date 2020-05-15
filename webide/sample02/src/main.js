@@ -9,12 +9,4 @@ sap.ui.define([
 	.then(function (view) {
 		view.placeAt("content");
 	});
-
-	/*new Button({
-		text: "Ready...",
-		press: function () {
-			MessageToast.show("Hello World!");
-		}
-	}).placeAt("content");*/
-
 });
