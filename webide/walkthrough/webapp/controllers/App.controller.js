@@ -1,11 +1,11 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"sap/m/MessageToast",
+	"sap/m/MessageToast"/*,
 	"sap/ui/model/json/JSONModel",
-	"sap/ui/model/resource/ResourceModel"
-], function(Controller, MessageToast, JSONModel, ResourceModel) {
+	"sap/ui/model/resource/ResourceModel"*/
+], function(Controller, MessageToast) {
 	return Controller.extend("sap.ui.demo.walkthrough.controllers.App", {
-		onInit: function(){
+		/*onInit: function(){
 			var i18nModel = new ResourceModel({
             	bundleName: "sap.ui.demo.walkthrough.i18n.i18n"
         	});
@@ -18,18 +18,17 @@ sap.ui.define([
 			};	
 			var model = new JSONModel(modelData);
 			this.getView().setModel(model);
-		},
+		},*/
 		onShowHello: function(){
-			var bundler = this.getView().getModel("i18n").getResourceBundle();
-			var sReceipient = this.getView().getModel().getProperty("/receipient/name");
-			var sMsg = bundler.getText("helloMsg", [sReceipient]);
-			MessageToast.show(sMsg);
+			MessageToast.show(this.buildDescriptionMessage());
 		},
 		onLiveChange: function(oEvent) {
+			this.getView().getModel().setProperty("/descriptionMessage", this.buildDescriptionMessage());
+		},
+		buildDescriptionMessage: function() {
 			var bundler = this.getView().getModel("i18n").getResourceBundle();
 			var sReceipient = this.getView().getModel().getProperty("/receipient/name");
-			var sMsg = bundler.getText("helloMsg", [sReceipient]);
-			this.getView().getModel().setProperty("/descriptionMessage", sMsg);
+			return bundler.getText("helloMsg", [sReceipient]);
 		}
 	});	
 });
