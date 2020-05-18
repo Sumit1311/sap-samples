@@ -1,0 +1,12 @@
+html[dir="ltr"] .sapUiDemoWalkthrough .myCustomButton.sapMBtn {
+   margin-right: 0.125rem
+}
+
+html[dir="rtl"] .sapUiDemoWalkthrough .myCustomButton.sapMBtn {
+   margin-left: 0.125rem
+}
+
+.sapUiDemoWalkthrough .myCustomText {
+   display: inline-block;
+   font-weight: bold;
+}

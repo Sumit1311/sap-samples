@@ -2,15 +2,17 @@
 xmlns="sap.m"
 controllerName="sap.ui.demo.walkthrough.controllers.App"
 xmlns:mvc="sap.ui.core.mvc"
+displayBlock="true"
 >
-   <Button
-		text="{i18n>showHelloButtonText}"
-    	press=".onShowHello"/>
-    <Input 
-    	type="Text" 
-    	valueLiveUpdate="true" 
-    	width="60%"
-    	description="{/descriptionMessage}" 
-    	liveChange=".onLiveChange"
-    	value="{/receipient/name}" />
+	<Shell>
+	<App class="sapUiDemoWalkthrough">
+		<pages>
+			<Page title="{i18n>welcomePageTitle}">
+				<content>
+					<mvc:XMLView viewName="sap.ui.demo.walkthrough.views.HelloPanel" />
+			    </content>
+	    	</Page>
+	    </pages>
+	</App>
+	</Shell>
 </mvc:View>

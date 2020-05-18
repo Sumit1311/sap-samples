@@ -1,9 +1,8 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller",
-	"sap/m/MessageToast"/*,
+	"sap/ui/core/mvc/Controller"/*,
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/model/resource/ResourceModel"*/
-], function(Controller, MessageToast) {
+], function(Controller) {
 	return Controller.extend("sap.ui.demo.walkthrough.controllers.App", {
 		/*onInit: function(){
 			var i18nModel = new ResourceModel({
@@ -19,16 +18,5 @@ sap.ui.define([
 			var model = new JSONModel(modelData);
 			this.getView().setModel(model);
 		},*/
-		onShowHello: function(){
-			MessageToast.show(this.buildDescriptionMessage());
-		},
-		onLiveChange: function(oEvent) {
-			this.getView().getModel().setProperty("/descriptionMessage", this.buildDescriptionMessage());
-		},
-		buildDescriptionMessage: function() {
-			var bundler = this.getView().getModel("i18n").getResourceBundle();
-			var sReceipient = this.getView().getModel().getProperty("/receipient/name");
-			return bundler.getText("helloMsg", [sReceipient]);
-		}
 	});	
 });
