@@ -38,7 +38,7 @@ sap.ui.define([
 			delete this._helloDialog;
 		},
 
-		openHelloDialog : function (id) {
+		openHelloDialog : function () {
 			this._helloDialog.open();
 		}
 	});
