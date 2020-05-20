@@ -4,6 +4,9 @@ sap.ui.define([
 	"sap/ui/model/resource/ResourceModel"*/
 ], function(Controller) {
 	return Controller.extend("sap.ui.demo.walkthrough.controllers.App", {
+		onOpenDialog: function() {
+			this.getOwnerComponent().openHelloDialog();
+		}
 		/*onInit: function(){
 			var i18nModel = new ResourceModel({
             	bundleName: "sap.ui.demo.walkthrough.i18n.i18n"
