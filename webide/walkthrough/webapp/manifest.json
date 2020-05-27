@@ -65,10 +65,10 @@
 			},
 			"invoice": {
 				"type": "sap.ui.model.json.JSONModel",
-				"uri": "Invoices.json"
+				"uri": "localService/mockdata/Invoices.json"
 			},
 			"invoiceOData" : {
-				"dataSource" : "herokuProxy"
+				"dataSource" : "invoiceServiceRemote"
 			} 
 		},
 		"resources": {
