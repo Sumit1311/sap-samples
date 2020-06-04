@@ -30,9 +30,8 @@ sap.ui.define([
 			var model = new JSONModel(modelData);
 			this.setModel(model);
 			this._helloDialog = new HelloDialog(this.getRootControl());
+			this.getRouter().initialize();
     	},
-
-
 		exit : function() {
 			this._helloDialog.destroy();
 			delete this._helloDialog;

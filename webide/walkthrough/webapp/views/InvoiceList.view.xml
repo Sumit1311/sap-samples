@@ -24,14 +24,16 @@
         	<ObjectListItem
 	            title="{invoiceOData>Quantity} x {invoiceOData>ProductName}"
 	            number="{
-	            	parts: ['invoiceOData>ExTTendedPrice', 'view>/currency'],
+	            	parts: ['invoiceOData>ExtendedPrice', 'view>/currency'],
 	            	type: 'sap.ui.model.type.Currency',
 					formatOptions: {
 						showMeasure: false
 					}
 	            }"
 	            numberUnit="{view>/currency}"
-	            numberState="{= ${invoiceOData>ExtendedPrice} > 50 ? 'Error' : 'Success' }">
+	            numberState="{= ${invoiceOData>ExtendedPrice} > 50 ? 'Error' : 'Success' }"
+	            type="Navigation"
+	            press="onPress">
         		<firstStatus>
 					<ObjectStatus text="{
 						path: 'invoiceOData>Status',

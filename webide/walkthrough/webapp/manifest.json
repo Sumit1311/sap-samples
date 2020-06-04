@@ -48,7 +48,7 @@
 			"viewName": "sap.ui.demo.walkthrough.views.App",
 			"type": "XML",
 			"async": true,
-			"id": "app"
+			"id": "sapUiWalkthroughDemoId"
 		},
 		"dependencies": {
 		  "minUI5Version": "1.60",
@@ -68,7 +68,7 @@
 				"uri": "localService/mockdata/Invoices.json"
 			},
 			"invoiceOData" : {
-				"dataSource" : "invoiceServiceRemote"
+				"dataSource" : "herokuProxy"
 			} 
 		},
 		"resources": {
@@ -77,6 +77,35 @@
 				  "uri": "css/style.css"
 				}
 			]
-	}
+		},
+		"routing" : {
+			"config" : {
+				"routerClass" : "sap.m.routing.Router", 
+				"viewType" : "XML",
+				"viewPath" : "sap.ui.demo.walkthrough.views",
+				"controlId" : "sapUiWalkthroughDemoId",
+				"controlAggregation" : "pages",
+				"async" : true
+			},
+			"routes" :[{
+				"name" : "overview",
+				"pattern" : "",
+				"target" : "overview"
+			}, {
+				"name" : "detail",
+				"pattern" : "detail",
+				"target" : "detail"
+			}],
+			"targets":{
+				"overview" : {
+					"viewId": "overview",
+					"viewName" : "Overview"
+				},
+				"detail" : {
+					"viewId" : "detail",
+					"viewName" : "Detail"
+				}
+			}
+		}
 	}
 }
